@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-#import json
-import json
 #import from django
 from django.core.exceptions import ImproperlyConfigured
 
@@ -22,23 +20,12 @@ from unipath import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).ancestor(3)
 
-with open("secret.json") as f:
-    secret = json.loads(f.read())
-
-def get_secret(secret_name, secrets=secret):
-    try:
-        return secrets[secret_name]
-    except:
-        msg = "la variable %s no existe" % secret_name
-        raise ImproperlyConfigured(msg)
-
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY = "django-insecure-ih%)3h-h(gbs-(um^_h3qmc+v9-(o_i^-@yd4bb(blp4kde#sa"
 
 
 # Application definition
