@@ -14,14 +14,14 @@ print('%02X%02X%02X' % (r(),r(),r()))
 print('%02X' % (r()))
 '''
 
-r = lambda: random.randint(10000,99999)
-print('%02X%02X%02X' % (r(),r(),r()))
+r = lambda: random.randint(90000,99999)
 print(str('%02X' % (r())))
 print('========')
 
-b = lambda: random.randint(10000,99999)
-while len(str('%02X' % (b())))==5:
-    print('%02X' % (b()))
+#crear salas
+#unirse sala
+#hexadecimal
+
 
 
 
