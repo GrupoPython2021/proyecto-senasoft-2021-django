@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bloque para actualizar la etiqueta title por pestaña -->
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body class="bg-light">
+    <!-- Bloque para actualizar según el template a usar -->
+    {% block content %}
+    {% endblock content %}
+</body>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</html>
