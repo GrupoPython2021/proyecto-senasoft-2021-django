@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #app home
     re_path('',include('applications.sesion.urls')),
+    re_path('', include('applications.cartas.urls')),
     
 ]
