@@ -1,6 +1,4 @@
 import random
-
-from jinja2 import Environment, FileSystemLoader
 from django.shortcuts import render
 
 
@@ -27,12 +25,7 @@ class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
     success_url = "sesion/partida1.html"
-
-    casa={'1':'casa'}
-
-
-
-
+ #
 
 
 def crear(request):
@@ -62,6 +55,8 @@ def iniciar(request):
     
     mensaje = 'Su nombre de usuario es: {}, \
         y el codigo de la sesion es {}'.format(nickname,r)
+
+
 
     print(nick)
     print(r)

@@ -6,15 +6,22 @@
     Esta es la de iniciador de la partida
 -->
 {% block content %}
-{{1}}
 <div>
     <div > </div>
 
     <div > </div>
-
+{{1}}
     <form action="/barajar-sistema/">
         <button>Iniciar Partida</button>
     </form>
+
+    
+    {% for user in usuario %}
+
+    {usuario.as_p}
+        
+    {% endfor %}
+        
 
 </div>
 
