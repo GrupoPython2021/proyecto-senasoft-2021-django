@@ -21,9 +21,9 @@ urlpatterns = [
         views.crear, 
         name='partida1'
     ),
-    path(
-        'partida2/', 
-        views.iniciar, 
-        name='partida2'
-    ),
+    #path(
+    #    'partida2/', 
+    #    views.iniciar, 
+    #    name='partida2'
+    #),
 ]

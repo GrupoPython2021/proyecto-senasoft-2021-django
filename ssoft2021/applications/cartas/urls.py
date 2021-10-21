@@ -3,6 +3,8 @@ from django.urls import path
 
 from . import views
 
+apps_name="cartas_app"
+
 
 urlpatterns = [
     path('inicio-partida/', views.InicioPartida.as_view()),

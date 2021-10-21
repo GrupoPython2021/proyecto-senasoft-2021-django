@@ -18,7 +18,7 @@ class HomeView(TemplateView):
 #vista iniciar aprtida
 
  
-from jinja2 import Environment, FileSystemLoader
+#from jinja2 import Environment, FileSystemLoader
 
 class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
@@ -27,9 +27,9 @@ class CrearSalaView(FormView):
 
     casa={'1':'casa'}
 
-    env = Environment(loader=FileSystemLoader("F:\\pandas\\boletin"))
-    template = env.get_template("boletin_1.html")
-    html = template.render(casa)
+   # env = Environment(loader=FileSystemLoader("F:\\pandas\\boletin"))
+   # template = env.get_template("boletin_1.html")
+   # html = template.render(casa)
 
 
 
@@ -68,8 +68,8 @@ def iniciar(request):
     print(nick)
     print(r)
 
-    return HttpResponse(mensaje)
-    #return render(request, "sesion/home.html")
+    #return HttpResponse(mensaje)
+    return render(request, "cartas/iniciar-partida.html")
 
 
 
