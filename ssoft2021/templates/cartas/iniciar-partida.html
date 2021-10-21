@@ -1,30 +1,34 @@
 <!-- HTML Base para los templates -->
 {% extends 'base.html' %}
-<<<<<<< HEAD
-{% block title %}El juego SCM{% endblock title %}
-=======
 {% block title %}Lobby de juego{% endblock title %}
->>>>>>> f014136742c3d9cfee018c70d097c4122b023df3
 {% load static %}
 <!-- Bloque en donde se encuentra el template a agregar al Base 
     Esta es la de iniciador de la partida
 -->
 {% block content %}
 <div>
-    <div > </div>
+    
 
     <div > </div>
-{{1}}
-    <form action="/barajar-sistema/">
+{{nick}}
+
+    <!-- <form action="/barajar-sistema/">
+        <button>Iniciar Partida</button>
+    </form> -->
+    <form method="GET" > <!--action="/barajar-sistema/" -->
+        {% csrf_token %}
+        <div id="codigo" name="codigo"> 
+            {{r}}
+        </div>
         <button>Iniciar Partida</button>
     </form>
 
     
-    {% for user in usuario %}
+    <!-- {% for user in usuario %}
 
-    {usuario.as_p}
+        {{usuario.as_p}}
         
-    {% endfor %}
+    {% endfor %} -->
         
 
 </div>
