@@ -30,10 +30,6 @@ class CrearSalaView(FormView):
 
     casa={'1':'casa'}
 
-    env = Environment(loader=FileSystemLoader("C:\\Users\\mwmar\\Desktop\\ss\\proyecto-senasoft-2021-django\\ssoft2021\\templates\\cartas"))
-    template = env.get_template("iniciar-partida.html")
-    html = template.render(casa)
-
 
 
 
