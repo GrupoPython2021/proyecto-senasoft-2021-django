@@ -74,7 +74,7 @@ def barajar_sistema(request):
     cartas_sis.append(sis1[1])
     cartas_sis.append(sis2[1])
     cartas_sis.append(sis3[1])
-    print(cartas_sis)
+
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
@@ -122,4 +122,4 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
                 jug = random.choice(total_cartas) 
                 total_cartas.remove(jug)
                 jugador4.append(jug)
-    print(jugador1)
+    

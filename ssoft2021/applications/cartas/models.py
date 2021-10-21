@@ -2,7 +2,7 @@ from django.db import models
 
 # Import para selecciones aleatorias
 import random
-from django.db.models.fields.files import ImageFieldFile
+# from django.db.models.fields.files import ImageFieldFile
 
 #import timestampedmodels
 from model_utils.models import TimeStampedModel
@@ -24,21 +24,21 @@ class Carta(models.Model):
     ]
 
     MODULOS = [
-        ('1','Nómina'),
-        ('2','Facturación'),
-        ('3','Recibos'),
-        ('4','Comprobante contable'),
-        ('5','Usuarios'),
-        ('6','Contabilidad'),
+        ('8','Nómina'),
+        ('9','Facturación'),
+        ('10','Recibos'),
+        ('11','Comprobante contable'),
+        ('12','Usuarios'),
+        ('13','Contabilidad'),
     ]
 
     T_ERROR = [
-        ('1','404'),
-        ('2','Stack overflow'),
-        ('3','Memory out of range'),
-        ('4','Null pointer'),
-        ('5','Syntax error'),
-        ('6','Encoding error'),
+        ('14','404'),
+        ('15','Stack overflow'),
+        ('16','Memory out of range'),
+        ('17','Null pointer'),
+        ('18','Syntax error'),
+        ('19','Encoding error'),
     ]
 
 
@@ -51,8 +51,8 @@ class Carta(models.Model):
     class Meta:
         """Meta definition for Carta."""
 
-        verbose_name = 'Carta'
-        verbose_name_plural = 'Cartas'
+        verbose_name = 'Cartas_jugador'
+        verbose_name_plural = 'Cartas jugadores'
 
     def __str__(self):
         """Unicode representation of Carta."""
@@ -66,10 +66,17 @@ class Cartas_Completas(models.Model):
         upload_to='Cartas_Completas', blank=True, null=False
     )
 
-    cartas_jugador = models.ForeignKey(
-        Carta, on_delete=models.CASCADE
-    )
+    # cartas_jugador = models.ForeignKey(
+    #     Carta, on_delete=models.CASCADE,
+    #     null=True
+    # )
     
+    class Meta:
+        """Meta definition for Carta."""
+
+        verbose_name = 'Cartas Completas'
+        verbose_name_plural = 'Cartas Completas'
+
     def __str__(self):
         """Unicode representation of Carta."""
-        pass
+        return str(self.id)

@@ -2,13 +2,31 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/personalized.css' %}">
     <!-- Bloque para actualizar la etiqueta title por pestaña -->
     <title>{% block title %}{% endblock title %}</title>
 </head>
-<body class="bg-light">
-    <!-- Bloque para actualizar según el template a usar -->
+<body>
+    <div class="bg-image" style="
+        background-image: linear-gradient(
+            135deg,
+            #0007D4,
+            #505488,
+            #2F3F80,
+            #161569,
+            #5A4894,
+            #A950A1,
+            #FF7CAE
+        );
+        width: 100vm;
+        height: 100vh;
+        background-size: 500%;
+        animation: fanimado 10s infinite;
+    ">
     {% block content %}
     {% endblock content %}
+    </div>
+    <!-- Bloque para actualizar según el template a usar -->
 </body>
     <script src="{% static 'js/bootstrap.js' %}"></script>
 </html>
