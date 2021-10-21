@@ -1,0 +1,67 @@
+
+<!-- HTML Base para los templates -->
+{% extends 'base.html' %}
+{% block title %}El juego SCM{% endblock title %}
+{% load static %}
+<!-- Bloque en donde se encuentra el template a agregar al Base 
+    Crear o unirse a partida
+-->
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center text-center pt-4 mt-5 m-1">
+        <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5">
+            <div class="form-group pt-5">
+                <div class="col-12">
+                    <h1>Crear Partida</h1>
+                </div>
+
+                <div class="col-12">
+
+                    <form action="/partida2/" method="GET">
+                        <input type="text" name="nick" placeholder="Introduce tu nickname">
+                        <br><br>
+                        <input class="btn btn-primary" type="submit" value="Ir a la partida">
+                
+                    </form>
+                    
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+<form action="/partida2/" method="GET">
+
+    <input type="text" name="nick" placeholder="Introduce tu Nickname">
+    
+</div>
+<br>
+<div class="col-12">
+<a class="btn btn-primary" href="{% url 'sesion_app:partida1' %}" role="button">ok</a>
+</form>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Partida</title>
+</head>
+<body>
+
+    <form action="/partida2/" method="GET">
+        <input type="text" name="nick">
+        <input type="submit" value="Ir a la partida">
+
+    </form>
+</form>
+</body>
+</html>
