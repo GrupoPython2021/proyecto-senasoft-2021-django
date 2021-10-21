@@ -65,13 +65,11 @@ def iniciar(request):
     mensaje = 'Su nombre de usuario es: {}, \
         y el codigo de la sesion es {}'.format(nickname,r)
 
-
-
-
     print(nick)
     print(r)
 
     return HttpResponse(mensaje)
+    #return render(request, "sesion/home.html")
 
 
 
