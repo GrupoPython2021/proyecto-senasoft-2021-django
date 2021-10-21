@@ -13,12 +13,13 @@ from applications.users.models import User
 """ Vist genérica TemplateView 
 basda en clase """
 class InicioPartida(TemplateView):
+    context_object_name = 'usuario'
     template_name = "cartas/iniciar-partida.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(InicioPartida, self).get_context_data(**kwargs)
-        context['usuario'] = User.objects.all()
-        return context
+    
+    def get_queryset(self):
+        return InicioPartida.objects.last()
+
 
 """ Listas de las Cartas """
 PROGRAMADORES = [
