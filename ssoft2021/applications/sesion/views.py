@@ -1,6 +1,9 @@
 import random
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f014136742c3d9cfee018c70d097c4122b023df3
 from django.shortcuts import render
 
 
@@ -27,6 +30,7 @@ class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
     success_url = "sesion/partida1.html"
+<<<<<<< HEAD
 
     casa={'1':'casa'}
 
@@ -34,6 +38,9 @@ class CrearSalaView(FormView):
 
 
 
+=======
+ #
+>>>>>>> f014136742c3d9cfee018c70d097c4122b023df3
 
 
 def crear(request):
@@ -63,6 +70,8 @@ def iniciar(request):
     
     mensaje = 'Su nombre de usuario es: {}, \
         y el codigo de la sesion es {}'.format(nickname,r)
+
+
 
     print(nick)
     print(r)
