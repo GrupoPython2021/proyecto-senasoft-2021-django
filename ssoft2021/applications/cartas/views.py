@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views.generic import TemplateView
 
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 
 # Import para selecciones aleatorias
 import random
@@ -78,6 +78,7 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
+    Repartir_Cartas()
     # return (render)
     return HttpResponse(""" Hola Mundo """)
 
@@ -123,3 +124,8 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
                 total_cartas.remove(jug)
                 jugador4.append(jug)
     
+
+
+def Repartir_Cartas():
+    codigo_sala = request.GET.get("codigo")
+    print(codigo_sala)

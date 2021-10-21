@@ -9,6 +9,9 @@ from model_utils.models import TimeStampedModel
 #import de user
 from applications.users.models import User
 
+# importar managers
+from .managers import CartaManager
+
 
 class Carta(models.Model):
     """Modelo Carta."""
@@ -41,12 +44,13 @@ class Carta(models.Model):
         ('19','Encoding error'),
     ]
 
-
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     programadores = models.CharField(max_length=50, choices=PROGRAMADORES)
     modulo = models.CharField(max_length=50, choices=MODULOS)
     t_error = models.CharField(max_length=50, choices=T_ERROR)
     carta_repetida = models.CharField(max_length=50 )
+
+    objects = CartaManager()
 
     class Meta:
         """Meta definition for Carta."""

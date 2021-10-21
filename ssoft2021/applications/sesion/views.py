@@ -1,6 +1,4 @@
 import random
-
-
 from django.shortcuts import render
 
 
@@ -27,6 +25,7 @@ class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
     success_url = "sesion/partida1.html"
+#
 
 
 def crear(request):
@@ -63,7 +62,9 @@ def iniciar(request):
     print(r)
 
     #return HttpResponse(mensaje)
-    return render(request, "cartas/iniciar-partida.html")
+    return render(request, "cartas/iniciar-partida.html",
+    {'nick': nick,
+    'r':r})
 
 
 
