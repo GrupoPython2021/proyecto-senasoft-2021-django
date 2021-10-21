@@ -19,7 +19,6 @@ class HomeView(TemplateView):
 
 #vista iniciar aprtida
 
- 
 
 
 class CrearSalaView(FormView):

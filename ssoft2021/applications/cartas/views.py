@@ -77,6 +77,7 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
+    # return (render)
     return HttpResponse(""" Hola Mundo """)
 
     
