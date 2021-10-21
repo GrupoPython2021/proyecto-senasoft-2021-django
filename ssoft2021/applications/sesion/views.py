@@ -1,5 +1,9 @@
 import random
+
+from jinja2 import Environment, FileSystemLoader
 from django.shortcuts import render
+
+
 
 #import view.generic
 from django.views.generic import FormView, TemplateView
@@ -18,7 +22,7 @@ class HomeView(TemplateView):
 #vista iniciar aprtida
 
  
-#from jinja2 import Environment, FileSystemLoader
+
 
 class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
@@ -27,9 +31,9 @@ class CrearSalaView(FormView):
 
     casa={'1':'casa'}
 
-   # env = Environment(loader=FileSystemLoader("F:\\pandas\\boletin"))
-   # template = env.get_template("boletin_1.html")
-   # html = template.render(casa)
+    env = Environment(loader=FileSystemLoader("C:\\Users\\mwmar\\Desktop\\ss\\proyecto-senasoft-2021-django\\ssoft2021\\templates\\cartas"))
+    template = env.get_template("iniciar-partida.html")
+    html = template.render(casa)
 
 
 
