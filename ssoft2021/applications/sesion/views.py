@@ -19,6 +19,7 @@ class HomeView(TemplateView):
 
  
 from jinja2 import Environment, FileSystemLoader
+
 class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
