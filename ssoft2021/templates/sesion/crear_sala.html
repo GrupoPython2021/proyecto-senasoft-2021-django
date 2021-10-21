@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start</title>
-</head>
-<body>
+<!-- HTML Base para los templates -->
+{% extends 'base.html' %}
+{% block title %}El juego SCM{% endblock title %}
+{% load static %}
+<!-- Bloque en donde se encuentra el template a agregar al Base 
+    Crear o unirse a partida
+-->
 
 
-
-    <h1>Crear sala</h1>
-    <form action="#" method="POST">{% csrf_token %}
-        <input type="text" name="nickname" placeholder="apodo">
-        <br>
-        <br>
-        <input style="font-size: 26px" type="submit" value="nickname">
-
-
-    </form>
+{% block content %}
     
-</body>
-</html>
+    <!-- Modals -->
+    <div class="container">
+        <div class="row justify-content-center text-center pt-4 mt-5 m-1">
+            <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5">
+                <div class="form-group pt-5">
+                    <div class="col-12">
+                        <h1>Unirse a sala de juegos</h1>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Código de sala</label>
+                    </div>
+                    <div class="col-12">
+                        <a class="btn btn-primary" href="{% url 'sesion_app:home' %}" role="button">Unirse a partida</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
 

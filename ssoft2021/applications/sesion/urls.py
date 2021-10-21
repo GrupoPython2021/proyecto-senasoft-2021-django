@@ -12,7 +12,7 @@ urlpatterns = [
         name='home'
     ),
     path(
-        'crear_partida/', 
+        'crear-partida/', 
         views.CrearSalaView.as_view(), 
         name='crear'
     ),

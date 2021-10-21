@@ -10,7 +10,6 @@ class Sesion(TimeStampedModel):
 
     class Meta:
         """Meta para Sesion."""
-
         verbose_name = 'Sesion'
         verbose_name_plural = 'Sesiones'
 

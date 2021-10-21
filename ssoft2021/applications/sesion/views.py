@@ -13,13 +13,9 @@ class HomeView(TemplateView):
 
 #vista iniciar aprtida
 
-
-
 class CrearSalaView(TemplateView):
     template_name = "sesion/crear_sala.html"
-
-    
-
+    #
     def username(request):
         if request.method == 'POST':
             nickname = request.POST.get('nickname')
