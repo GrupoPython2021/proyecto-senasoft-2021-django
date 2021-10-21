@@ -15,27 +15,22 @@
                 <div class="col-12">
                     <h1>El juego SCM</h1>
                 </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingNickname" placeholder="Nickname">
-                    <label for="floatingNickname">Escriba su nickname</label>
-                </div>
-                <div class="row-3">
-                    <a class="btn btn-primary" href="{% url 'sesion_app:home' %}" role="button">Unirse a partida</a>
-                </div>
-                <div class="row-3">
-                    <a class="btn btn-primary" href="{% url 'sesion_app:crear' %}" role="button">Crear partida</a>
-
+                
+              
                 <div class="col-12">
-                    <!--"/inicio-partida/"-->
-                    <!--action= "/partida2/"-->
-
                     <form action= "/partida2/" method="GET">
-                        <input type="text" name="nick" placeholder="Introduce tu nickname">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" name="nick" id="floatingNickname" placeholder="Nickname">
+                            <label for="floatingNickname">Escriba su nickname</label>
+                        </div>
+                        
                         <br><br>
                         <div class="col-12">
-                            <input class="btn btn-primary" type="submit" value="Ir a la partida">
+                            <input class="btn btn-primary" type="submit" value="Crear partida">
                         
                             <a class="btn btn-primary" href="{% url 'sesion_app:crear' %}" role="button">Unirse a partida</a>
+                            <br>
+                            _________________________________
                         </div>
                     </form>
                 </div>

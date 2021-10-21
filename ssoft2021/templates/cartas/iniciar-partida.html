@@ -10,26 +10,29 @@
     
 
     <div > </div>
+    Hola: 
 {{nick}}
+<br>
 
-    <!-- <form action="/barajar-sistema/">
-        <button>Iniciar Partida</button>
-    </form> -->
+      <input class="btn btn-primary" type="submit" value="{{nick}}">
+
     <form method="GET" > <!--action="/barajar-sistema/" -->
         {% csrf_token %}
+<<<<<<< HEAD
         <input type="text" id="codigo" name="codigo" value={{r}}>
         <!-- <div id="codigo" name="codigo">  -->
             <!-- {{r}} -->
         <!-- </div> -->
+=======
+        <div id="codigo" name="codigo"> 
+            El codigo de la partida es:
+            <input class="btn btn-primary" type="submit" value="{{r}}">
+            {{r}}
+        </div>
+>>>>>>> 84b7a22415baec9f4e4250c86c72cd74da2bfd46
         <button>Iniciar Partida</button>
     </form>
 
-    
-    <!-- {% for user in usuario %}
-
-        {{usuario.as_p}}
-        
-    {% endfor %} -->
         
 
 </div>
