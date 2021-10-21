@@ -1,17 +1,27 @@
-
+<!-- HTML Base para los templates -->
+{% extends 'base.html' %}
+{% block title %}El juego SCM{% endblock title %}
+{% load static %}
 <!-- Bloque en donde se encuentra el template a agregar al Base 
     Crear o unirse a partida
 -->
 {% block content %}
-{{1}}
 <div>
     <div > </div>
 
     <div > </div>
-
+{{1}}
     <form action="/barajar-sistema/">
         <button>Iniciar Partida</button>
     </form>
+
+    
+    {% for user in usuario %}
+
+    {usuario.as_p}
+        
+    {% endfor %}
+        
 
 </div>
 

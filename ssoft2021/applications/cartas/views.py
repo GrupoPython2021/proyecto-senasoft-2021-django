@@ -7,12 +7,18 @@ from django.http import HttpResponse
 # Import para selecciones aleatorias
 import random
 
+from applications.users.models import User 
+
 
 """ Vist genérica TemplateView 
 basda en clase """
 class InicioPartida(TemplateView):
     template_name = "cartas/iniciar-partida.html"
-    
+
+    def get_context_data(self, **kwargs):
+        context = super(InicioPartida, self).get_context_data(**kwargs)
+        context['usuario'] = User.objects.all()
+        return context
 
 """ Listas de las Cartas """
 PROGRAMADORES = [
