@@ -16,4 +16,14 @@ urlpatterns = [
         views.CrearSalaView.as_view(), 
         name='crear'
     ),
+    path(
+        'partida1/', 
+        views.crear, 
+        name='partida1'
+    ),
+    path(
+        'partida2/', 
+        views.iniciar, 
+        name='partida2'
+    ),
 ]

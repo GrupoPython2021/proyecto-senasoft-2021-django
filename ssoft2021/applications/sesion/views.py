@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render
 
 #import view.generic
@@ -5,7 +6,10 @@ from django.views.generic import FormView, TemplateView
 
 from django.http import HttpResponse
 
-
+#import forms.forms
+from .forms import CreateSalaViewForm
+from .models import Sesion
+from applications.users.models import User
 
 #Vista de home
 class HomeView(TemplateView):
@@ -13,20 +17,60 @@ class HomeView(TemplateView):
 
 #vista iniciar aprtida
 
-
-
-class CrearSalaView(TemplateView):
+ 
+from jinja2 import Environment, FileSystemLoader
+class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
+    form_class = CreateSalaViewForm
+    success_url = "sesion/partida1.html"
 
+    casa={'1':'casa'}
+
+    env = Environment(loader=FileSystemLoader("F:\\pandas\\boletin"))
+    template = env.get_template("boletin_1.html")
+    html = template.render(casa)
+
+
+
+
+  #  form.cleaned_data['my_form_field_name']
+
+
+def crear(request):
+    return render(request, "sesion/partida1.html")
+
+
+def iniciar(request):
     
+    #captura del nickname
+    nick = request.GET['nick']
+    #numero de dos digitos aleatorios
+    b = random.randint(10, 99)
+    #nickname y clavepersonal
+    nickname = nick + "-" + str(b)
+    
+    #nuemero hexadecimal aleatorio
+    r = lambda: random.randint(90000,99999)
+    r = str('%02X' % (r()))
 
-    def username(request):
-        if request.method == 'POST':
-            nickname = request.POST.get('nickname')
-            correo = nickname
-            print(correo)
+    #guardado de la sesion en la base de datos
+    Sesion.objects.create(sesion=r)
+    print(Sesion.objects.all())
+    #print(nick)
+    print(r)
 
-        return render(request, 'sesion/crear_sala.html', {})
+    User.objects.create(username=nick, activo=True, sesion=(Sesion.objects.last()))
+    
+    mensaje = 'Su nombre de usuario es: {}, \
+        y el codigo de la sesion es {}'.format(nickname,r)
+
+
+
+
+    print(nick)
+    print(r)
+
+    return HttpResponse(mensaje)
 
 
 
