@@ -4,19 +4,17 @@ from django.views.generic import TemplateView
 
 from django.http import HttpResponse
 
-
 # Import para selecciones aleatorias
 import random
-# Create your views here.
 
 
-
-
+""" Vist genérica TemplateView 
+basda en clase """
 class InicioPartida(TemplateView):
     template_name = "cartas/iniciar-partida.html"
     
 
-
+""" Listas de las Cartas """
 PROGRAMADORES = [
     ('1','Pedro'),
     ('2','Juan'),
@@ -46,45 +44,55 @@ T_ERROR = [
 ]
 
 
-
+""" Función para barajar cartas 
+y repartir al sis """
 def barajar_sistema(request):
-    # función choice para seleccionar una carta aleatoria
-    
-    cartas_sis = [] # nuevo arreglo para cartas del sistema
-    sis1 = random.choice(PROGRAMADORES) 
-    sis2 = random.choice(MODULOS)
-    sis3 = random.choice(T_ERROR)
+    # duplicar listas
+    PROGRAMADORESCP = PROGRAMADORES[:]
+    MODULOSCP = MODULOS[:]
+    T_ERRORCP = T_ERROR[:]
 
-    PROGRAMADORES.remove(sis1)
-    MODULOS.remove(sis2)
-    T_ERROR.remove(sis3)
-    
+    cartas_sis = [] # nuevo arreglo para cartas del sistema
+    # función choice para seleccionar una carta aleatoria
+    sis1 = random.choice(PROGRAMADORESCP) 
+    sis2 = random.choice(MODULOSCP)
+    sis3 = random.choice(T_ERRORCP)
+
+    # eliminar cartas seleccionadas en el duplicado
+    PROGRAMADORESCP.remove(sis1)
+    MODULOSCP.remove(sis2)
+    T_ERRORCP.remove(sis3)
+
     # agregar cartas al nuevo arreglo
     cartas_sis.append(sis1[1])
     cartas_sis.append(sis2[1])
     cartas_sis.append(sis3[1])
     print(cartas_sis)
+    """ llamado función baraja_jugador para 
+    enviar copia listas y ejecutarla""" 
+    barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
     return HttpResponse(""" Hola Mundo """)
 
     
 
-
-
-def barajar_jugador(self):
-    jugador1=[]
+""" Función para revolver y repartir cartas a los jugadores """
+def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
+    # mazo para cada jugador
+    jugador1=[] 
     jugador2=[]
     jugador3=[]
     jugador4=[]
 
     total_cartas=[] # lista para barajar las cartas
-    # bucles para añadir cartas a baraja
-    for i in range(6):
-        total_cartas.append(self.PROGRAMADORES[i][1])
-    for i in range(5):
-        total_cartas.append(self.MODULOS[i][1])
-        total_cartas.append(self.T_ERROR[i][1])
 
-    # cartas_jugador=[] # nueva lista para cartas jugadores
+    # Bucles para añadir cartas a baraja
+    for i in range(6):
+        total_cartas.append(PROGRAMADORESCP[i][1])
+    for i in range(5):
+        total_cartas.append(MODULOSCP[i][1])
+        total_cartas.append(T_ERRORCP[i][1])
+    
+    # Bucles para repartir cartas aleatoreamente
     for i in range(4):
         for j in range(4):
             if i == 0:
@@ -93,16 +101,17 @@ def barajar_jugador(self):
                 jugador1.append(jug) # añadir carta seleccionada a lista
         for k in range(4):
             if i == 1:
-                jug = random.choice(total_cartas) # seleccionar cartas de la baraja
+                jug = random.choice(total_cartas)
                 total_cartas.remove(jug)
-                jugador2.append(jug) # añadir carta seleccionada a lista
+                jugador2.append(jug) 
         for l in range(4):
             if i == 2:
-                jug = random.choice(total_cartas) # seleccionar cartas de la baraja
+                jug = random.choice(total_cartas) 
                 total_cartas.remove(jug)
-                jugador3.append(jug) # añadir carta seleccionada a lista
+                jugador3.append(jug) 
         for m in range(4):
             if i == 3:
-                jug = random.choice(total_cartas) # seleccionar cartas de la baraja
+                jug = random.choice(total_cartas) 
                 total_cartas.remove(jug)
-                jugador4.append(jug) # añadir carta seleccionada a lista
+                jugador4.append(jug)
+    print(jugador1)
