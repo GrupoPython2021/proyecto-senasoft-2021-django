@@ -17,9 +17,10 @@
     </form> -->
     <form method="GET" > <!--action="/barajar-sistema/" -->
         {% csrf_token %}
-        <div id="codigo" name="codigo"> 
-            {{r}}
-        </div>
+        <input type="text" id="codigo" name="codigo" value={{r}}>
+        <!-- <div id="codigo" name="codigo">  -->
+            <!-- {{r}} -->
+        <!-- </div> -->
         <button>Iniciar Partida</button>
     </form>
 

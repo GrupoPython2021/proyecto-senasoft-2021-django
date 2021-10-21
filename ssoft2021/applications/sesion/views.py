@@ -63,9 +63,9 @@ def iniciar(request):
 
     #return HttpResponse(mensaje)
     return render(request, "cartas/iniciar-partida.html",
-    {'nick': nick,
+    {
     'r':r})
-
+# 'nick': nick,
 
 
 

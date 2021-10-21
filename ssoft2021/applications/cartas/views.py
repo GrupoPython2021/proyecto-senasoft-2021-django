@@ -126,5 +126,5 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
 
 
 def Repartir_Cartas():
-    codigo_sala = request.GET.get("codigo")
+    codigo_sala = request.GET.get("codigo", '')
     print(codigo_sala)
