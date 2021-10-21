@@ -1,5 +1,8 @@
 from django.db import models
 
+# Import para selecciones aleatorias
+import random
+
 #import timestampedmodels
 from model_utils.models import TimeStampedModel
 #import de user
