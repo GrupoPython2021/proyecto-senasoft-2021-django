@@ -25,7 +25,7 @@ class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
     success_url = "sesion/partida1.html"
-
+ #
 
 
 def crear(request):
