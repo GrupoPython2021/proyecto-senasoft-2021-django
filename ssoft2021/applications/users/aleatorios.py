@@ -19,3 +19,7 @@ print('valor aleatorio:' + str(b))
 #crear salas
 #unirse sala
 #hexadecimal
+
+#10 cerrar partida para
+#11salir de la partida partida
+#12 conexion
