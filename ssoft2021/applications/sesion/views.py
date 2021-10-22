@@ -35,7 +35,8 @@ def crear(request):
 def iniciar(request):
     
     #captura del nickname
-    nick = request.GET['nick']
+    # nick = request.GET['nick']
+    nick = request.GET.get("nick", '')
     #numero de dos digitos aleatorios
     b = random.randint(10, 99)
     #nickname y clavepersonal
@@ -63,7 +64,7 @@ def iniciar(request):
 
     #return HttpResponse(mensaje)
     return render(request, "cartas/iniciar-partida.html",
-    {
+    {'nick': nick,
     'r':r})
 # 'nick': nick,
 

@@ -8,7 +8,7 @@ from django.http import HttpResponse, request
 import random
 
 from applications.users.models import User 
-
+from .models import Carta
 
 """ Vist genérica TemplateView 
 basda en clase """
@@ -78,7 +78,7 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
-    Repartir_Cartas()
+    # Repartir_Cartas()
     # return (render)
     return HttpResponse(""" Hola Mundo """)
 
@@ -127,5 +127,8 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
 
 
 def Repartir_Cartas():
+    # barajar_sistema(request)
     codigo_sala = request.GET.get("codigo", '')
-    print(codigo_sala)
+    
+    # return Carta.
+
