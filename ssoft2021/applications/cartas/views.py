@@ -8,26 +8,35 @@ from django.http import HttpResponse, request
 import random
 
 from applications.users.models import User 
-<<<<<<< HEAD
-from .models import Carta
-=======
 from applications.sesion.models import Sesion 
+# from applications.sesion.models import Cartas_Completas 
 
->>>>>>> 15f3de3d42becc28e7510a38a42c43d5966541f0
 
 """ Vist genérica TemplateView 
 basda en clase """
 #class InicioPartida(TemplateView):
- #   context_object_name = 'usuario'
- #   template_name = "cartas/iniciar-partida.html"
+#   context_object_name = 'usuario'
+#   template_name = "cartas/iniciar-partida.html"
 
 def IniciarPartida(request):
-    sesion = Sesion.objects.last()
+    sesioncod = Sesion.objects.last()
+
+    consulta=Sesion.objects.filter(sesion=sesioncod)
+    # for i in range(User.objects.len()):
+    # consul_user=Sesion.objects.filter(sesion=sesioncod).get()
+
+    
 
     #return HttpResponse('23')
-    return render(request, "cartas/pantalla-juego.html", {'sesion':sesion})
+    return render(request, "cartas/pantalla-juego.html", 
+    {'sesioncod':sesioncod,
+    'consulta':consulta,
+    # 'consul_user': consul_user
+    })
 
-
+# def buscar_codigo():
+#     palabra_clave= IniciarPartida(request)
+#     print(palabra_clave)
 
 
 
@@ -88,11 +97,7 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
-<<<<<<< HEAD
-    # Repartir_Cartas()
-=======
     #Repartir_Cartas()
->>>>>>> 15f3de3d42becc28e7510a38a42c43d5966541f0
     # return (render)
     return HttpResponse(""" Hola Mundo """)
 
@@ -140,9 +145,9 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
     
 
 
-def Repartir_Cartas():
-    # barajar_sistema(request)
-    codigo_sala = request.GET.get("codigo", '')
+# def Repartir_Cartas():
+#     # barajar_sistema(request)
+#     codigo_sala = request.GET.get("codigo", '')
     
-    # return Carta.
+#     # return Carta.
 
