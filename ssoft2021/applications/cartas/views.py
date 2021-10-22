@@ -130,6 +130,23 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
                 total_cartas.remove(jug)
                 jugador4.append(jug)
     
+def Retomar_Partida(request):
+    #captura de nickname
+    nick2 = request.GET['nick']
+    cod_sesion = request.GET['cod_sesion']
+
+    return render(request, "cartas/pantalla-juego2.html",
+    {'nick2': nick2,
+    'cod_sesion':cod_sesion}) 
+
+def Unirse_Sesion(FormView):
+    template_name = "sesion/crear_sala.html"
+    form_class = CreateSalaViewForm
+    success_url = "sesion/partida1.html"
+
+
+
+
 
 
 def Repartir_Cartas():
