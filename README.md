@@ -9,9 +9,17 @@
 • Solución óptima al problema
 
 
+
+
+
 ===================== 1. Modelado de datos =======================================
 
 El modelado de los datos se encuentra adjunto en la carpeta "modelado de datos"
+
+
+
+
+
 
 =====================A 2. rquitectura y servicios ================================
 El aplicativo se desarrollo en computadores portatiles con windows 10, con 
@@ -20,10 +28,18 @@ Se probo en los navegadores de google chrome
 
 
 
+
+
+
 ======================== 4. Desarrollo en Frontend ==================
 
 El backend se desarrollo utilizando Bootstrap v.5.13, con algunas modificacione 
 el las carpeta css
+
+
+
+
+
 
 
 =====================A 5. Desarrollo en  Backend ================================
@@ -36,11 +52,9 @@ El aplicativo se realzo utilizando las versiones actulizadas hasta al fecha de:
 
 django, en su version mas 3.2.8
 python 3.10.0
-**************************************************************
-El aplicativo se realzo utilizando las versiones actulizadas hasta al fecha de:
 
-django, en su version mas 3.2.8
-python 3.10.0
+
+
 **************************************************************
 los paquetes instalados apra el correcto funcionamiento fueron:
 
@@ -99,6 +113,9 @@ xhtml2pdf          0.2.5
 zope.event         4.5.0
 
 zope.interface     5.4.0
+
+
+
 
 
 =====================6. Contenerización (Plus adicional para docker, doble plus para kubernetes)=====
