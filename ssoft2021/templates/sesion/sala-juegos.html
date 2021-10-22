@@ -5,7 +5,6 @@
 <!-- Bloque en donde se encuentra el template a agregar al Base 
     Esta es la de iniciador de la partida
 -->
-
 {% block content %}
     <div class="container">
         <div class="row justify-content-center">
@@ -110,10 +109,25 @@
                 <!-- Div de botones -->
                 <div class="row">
                     <div class="col"><button class="btn btn-primary">Preguntar</button></div>
-                    <div class="col"><button class="btn btn-primary">Acusar</button></div>
+                    <div class="col"><button class="btn btn-primary" onclick="abrir_modal_pregunta('{% url  %}')">Acusar</button></div>
                 </div>
             </div>
         </div>
     </div><!-- Fin de módulo a copiar -->
+
+    <div class="modal fade" id="modal_pregunta" role="dialog">
+
+    </div>
+
 {% endblock content %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        function abrir_modal_pregunta(url) {
+            $('#modal_pregunta').load(url), function name(params) {
+                $(this).modal('show');
+            }
+        }
+    </script>
+{% endblock scripts %}
     

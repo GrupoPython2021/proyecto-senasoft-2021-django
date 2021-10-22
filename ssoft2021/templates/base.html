@@ -23,10 +23,13 @@
         background-size: 500%;
         animation: fanimado 10s infinite;
     ">
+    <!-- Bloque en el que se cargan los contenidos de todas las páginas -->
     {% block content %}
     {% endblock content %}
     </div>
     <!-- Bloque para actualizar según el template a usar -->
 </body>
     <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- Bloque para cargar los scripts de los templates -->
+    {% block scripts %}{% endblock scripts %}
 </html>
