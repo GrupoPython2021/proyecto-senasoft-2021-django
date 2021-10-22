@@ -152,10 +152,11 @@ def Retomar_Partida(request):
     {'nick2': nick2,
     'cod_sesion':cod_sesion}) 
 
-def Unirse_Sesion(FormView):
-    template_name = "sesion/crear_sala.html"
-    form_class = CreateSalaViewForm
-    success_url = "sesion/partida1.html"
+def Unirse_Sesion(request):
+    #nick2 = request.GET['nick']
+    #cod_sesion = request.GET['cod_sesion']
+
+    return render(request, "cartas/pantalla-juego2.html") 
 
 
 
