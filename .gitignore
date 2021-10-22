@@ -130,3 +130,6 @@ dmypy.json
 
 #config vscode
 .vscode
+
+#templates/pruebas 
+templates/pruebas.html
