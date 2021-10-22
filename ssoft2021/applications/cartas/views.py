@@ -8,17 +8,23 @@ from django.http import HttpResponse, request
 import random
 
 from applications.users.models import User 
+from applications.sesion.models import Sesion 
 
 
 """ Vist genérica TemplateView 
 basda en clase """
-class InicioPartida(TemplateView):
-    context_object_name = 'usuario'
-    template_name = "cartas/iniciar-partida.html"
+#class InicioPartida(TemplateView):
+ #   context_object_name = 'usuario'
+ #   template_name = "cartas/iniciar-partida.html"
 
-    
-    def get_queryset(self):
-        return InicioPartida.objects.last()
+def IniciarPartida(request):
+    sesion = Sesion.objects.last()
+
+    #return HttpResponse('23')
+    return render(request, "cartas/pantalla-juego.html", {'sesion':sesion})
+
+
+
 
 
 """ Listas de las Cartas """
@@ -78,7 +84,7 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
-    Repartir_Cartas()
+    #Repartir_Cartas()
     # return (render)
     return HttpResponse(""" Hola Mundo """)
 
