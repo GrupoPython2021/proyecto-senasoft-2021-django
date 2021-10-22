@@ -25,17 +25,13 @@ class CrearSalaView(FormView):
     template_name = "sesion/crear_sala.html"
     form_class = CreateSalaViewForm
     success_url = "sesion/partida1.html"
- #
-
-
-def crear(request):
-    return render(request, "sesion/partida1.html")
 
 
 def iniciar(request):
     
     #captura del nickname
-    nick = request.GET['nick']
+    # nick = request.GET['nick']
+    nick = request.GET.get("nick", '')
     #numero de dos digitos aleatorios
     b = random.randint(10, 99)
     #nickname y clavepersonal
@@ -53,16 +49,14 @@ def iniciar(request):
 
     User.objects.create(username=nick, activo=True, sesion=(Sesion.objects.last()))
     
-    mensaje = 'Su nombre de usuario es: {}, \
-        y el codigo de la sesion es {}'.format(nickname,r)
-
-
-
     print(nick)
     print(r)
 
     #return HttpResponse(mensaje)
-    return render(request, "cartas/iniciar-partida.html")
+    return render(request, "cartas/iniciar-partida.html",
+    {'nick': nick,
+    'r':r})
+# 'nick': nick,
 
 
 

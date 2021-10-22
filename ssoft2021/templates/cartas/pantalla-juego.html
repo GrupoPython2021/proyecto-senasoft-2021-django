@@ -1,0 +1,40 @@
+<!-- HTML Base para los templates -->
+{% extends 'base.html' %}
+{% block title %}Lobby de juego{% endblock title %}
+{% load static %}
+<!-- Bloque en donde se encuentra el template a agregar al Base 
+    Esta es la de iniciador de la partida
+-->
+{% block content %}
+
+    <div >
+        {{sesion}}
+    </div>
+
+    <div>
+
+    </div>
+
+    <form action="">
+        <button type="button">Preguntar</button>
+        <button type="button">Acusar</button>
+    </form>
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            jugdor 1
+          </div>
+          <div class="col">
+            jugador 2
+          </div>
+          <div class="col">
+            Jugador 3
+          </div>
+          <div class="col">
+            Jugador 4
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

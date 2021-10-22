@@ -6,18 +6,49 @@
     Esta es la de iniciador de la partida
 -->
 {% block content %}
+<<<<<<< HEAD
 <div class="container">
 
     <form action="/barajar-sistema/">
+=======
+<div>
+    
+
+    <div > </div>
+    Hola: 
+<br>
+
+<<<<<<< HEAD
+    <input class="btn btn-primary" type="submit" value="{{nick}}">
+
+    <form method="GET" action="/barajar-sistema/" > 
+        {% csrf_token %}
+        <div id="codigo" name="codigo"> 
+            El codigo de la partida es:
+            <input class="btn btn-primary" type="submit" value="{{r}}"> <br>
+            <button>Iniciar Partida</button>
+            <!-- {{r}} -->
+        </div>
+=======
+      
+
+    <form method="GET" action="/inicio-partida/"> <!--action="/barajar-sistema/" -->
+        {% csrf_token %}
+        <input class="btn btn-primary" type="submit" name="nick1" value={{nick}}>
+        El codigo de la partida es:
+        <input class="btn btn-primary" type="text" id="codigo" name="codigo" value="{{r}}">
+        <br>
+>>>>>>> 840f658f670e0eacaa731e77c57b8b54dd53ea0c
         <button>Iniciar Partida</button>
     </form>
+>>>>>>> 15f3de3d42becc28e7510a38a42c43d5966541f0
 
-    
-    {% for user in usuario %}
-
-    {usuario.as_p}
+        <!-- <form action="/barajar-sistema/">
         
-    {% endfor %}
+    </form> -->
+    </form>
+    
+    
         
 
 </div>

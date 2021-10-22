@@ -2,23 +2,34 @@ from django.shortcuts import render
 
 from django.views.generic import TemplateView
 
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 
 # Import para selecciones aleatorias
 import random
 
 from applications.users.models import User 
+<<<<<<< HEAD
+from .models import Carta
+=======
+from applications.sesion.models import Sesion 
 
+>>>>>>> 15f3de3d42becc28e7510a38a42c43d5966541f0
 
 """ Vist genérica TemplateView 
 basda en clase """
-class InicioPartida(TemplateView):
-    template_name = "cartas/iniciar-partida.html"
+#class InicioPartida(TemplateView):
+ #   context_object_name = 'usuario'
+ #   template_name = "cartas/iniciar-partida.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(InicioPartida, self).get_context_data(**kwargs)
-        context['usuario'] = User.objects.all()
-        return context
+def IniciarPartida(request):
+    sesion = Sesion.objects.last()
+
+    #return HttpResponse('23')
+    return render(request, "cartas/pantalla-juego.html", {'sesion':sesion})
+
+
+
+
 
 """ Listas de las Cartas """
 PROGRAMADORES = [
@@ -77,6 +88,11 @@ def barajar_sistema(request):
     """ llamado función baraja_jugador para 
     enviar copia listas y ejecutarla""" 
     barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP)
+<<<<<<< HEAD
+    # Repartir_Cartas()
+=======
+    #Repartir_Cartas()
+>>>>>>> 15f3de3d42becc28e7510a38a42c43d5966541f0
     # return (render)
     return HttpResponse(""" Hola Mundo """)
 
@@ -122,3 +138,11 @@ def barajar_jugador(request, PROGRAMADORESCP, MODULOSCP, T_ERRORCP):
                 total_cartas.remove(jug)
                 jugador4.append(jug)
     
+
+
+def Repartir_Cartas():
+    # barajar_sistema(request)
+    codigo_sala = request.GET.get("codigo", '')
+    
+    # return Carta.
+
