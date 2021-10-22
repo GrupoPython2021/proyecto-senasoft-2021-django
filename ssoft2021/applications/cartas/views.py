@@ -21,7 +21,18 @@ basda en clase """
 def IniciarPartida(request):
     sesioncod = Sesion.objects.last()
 
-    consulta=Sesion.objects.filter(sesion=sesioncod)
+    consulta=Sesion.objects.filter(sesion=sesioncod).values('id').get()
+
+    id_sesion=consulta['id']
+    
+    num_jugadores=User.objects.filter(sesion=id_sesion).count()
+    cod_jugador = []
+    for i in range(num_jugadores):
+        datos = User.objects.filter(sesion=id_sesion).values('id').get()
+        id_user=consulta['id']
+        cod_jugador.append(id_user)
+    
+    # consulta2=consulta.get(id=consulta)
     # for i in range(User.objects.len()):
     # consul_user=Sesion.objects.filter(sesion=sesioncod).get()
 
@@ -31,6 +42,7 @@ def IniciarPartida(request):
     return render(request, "cartas/pantalla-juego.html", 
     {'sesioncod':sesioncod,
     'consulta':consulta,
+    # 'cod_jugador':cod_jugador,
     # 'consul_user': consul_user
     })
 
