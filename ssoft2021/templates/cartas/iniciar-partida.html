@@ -6,15 +6,71 @@
     Esta es la de iniciador de la partida
 -->
 {% block content %}
+<div class="container">
+    <div class="row justify-content-center text-center pt-4 mt-5 m-1">
+        <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5 bg-light">
+            <div class="form-group pt-5">
+                <!-- Pueden modificar desde este punto -->
+                    <form method="GET" action="/inicio-partida/"> 
+                        {% csrf_token %}
+                        <h1>Hola</h1>
+                        <div class="form-floating">
+                            <input class="form-control" type="submit"  name="nick1" value={{nick}}>
+                        </div>
+                        <br><br>
+                        <div class="col-12">
+                           <h3> El codigo de la partida es: </h3>
+                            <input class="btn btn-primary" type="text" id="codigo" name="codigo" value="{{r}}">
+                            <br><br>
+                            <button class="btn btn-primary" type="text"><h1>Iniciar Partida</h1></button>
+                            _________________________________
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+<div class="container">
+    <div class="row justify-content-center text-center pt-4 mt-5 m-1">
+        <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5 bg-light">
+            <div class="form-group pt-5">
+                <!-- Pueden modificar desde este punto -->
+                    <form method="GET" action="/inicio-partida/"> 
+                        {% csrf_token %}
+                        <h1>Hola</h1>
+                        <div class="form-floating">
+                            <input class="form-control" type="submit"  name="nick1" value={{nick}}>
+                        </div>
+                        <br><br>
+                        <div class="col-12">
+                            El codigo de la partida es:
+                            <input class="btn btn-primary" type="text" id="codigo" name="codigo" value="{{r}}">
+                            <a class="btn btn-primary" href="{% url 'sesion_app:crear' %}" role="button">Unirse a partida</a>
+                            <br><br>
+                            <button>Iniciar Partida</button>
+                            _________________________________
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+===========================================================================================
+
 <div>
     
 
     <div > </div>
     Hola: 
 <br>
-
-      
-
     <form method="GET" action="/inicio-partida/"> 
         {% csrf_token %}
         <input class="btn btn-primary" type="submit" name="nick1" value={{nick}}>
@@ -22,19 +78,5 @@
         <input class="btn btn-primary" type="text" id="codigo" name="codigo" value="{{r}}">
         <br>
         <button>Iniciar Partida</button>
-    </form>
-
-        <!-- <form action="/barajar-sistema/">
-        
-    </form> -->
-    </form>
-    
-    
-        
-
+    </form>     
 </div>
-
-{% endblock %}
-
-
-
