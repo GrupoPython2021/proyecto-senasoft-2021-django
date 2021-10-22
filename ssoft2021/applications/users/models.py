@@ -21,6 +21,6 @@ class User(TimeStampedModel):
 
     def __str__(self):
         """Representation para User."""
-        return self.username
+        return str(self.sesion)
 
 
