@@ -7,6 +7,120 @@
 -->
 {% block content %}
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="x-2 col-5 bg-light border">
+            <h1>Columna1</h1>
+            <div class="row">
+                <div class="card col" style="width: 18rem;">
+                    <img src="../static/img/15.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Guillermo</li>
+                            <li class="list-group-item">Programador</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card col " style="width: 18rem;">
+                    <img src="../static/img/2.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Guillermo</li>
+                            <li class="list-group-item">Programador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col" style="width: 18rem;">
+                    <img src="../static/img/3.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Guillermo</li>
+                            <li class="list-group-item">Programador</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem;">
+                    <img src="../static/img/4.PNG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Guillermo</li>
+                            <li class="list-group-item">Programador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+        <div class="x-2 col-5 bg-light border">
+            <h1>Columna2</h1>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <td>Quién</td>
+                        <td>Notas</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>La tiene J.F. Kennedy</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>La tiene Player2</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>La tiene player3</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <td>Módulo</td>
+                        <td>Notas</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nómina</td>
+                        <td>La tiene Player2</td>
+                    </tr>
+                    <tr>
+                        <td>Facturación</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Recibos</td>
+                        <td>La tiene Player 4</td>
+                    </tr>
+                    <tr>
+                        <td>Comprobante Contable</td>
+                        <td>La tiene Player 2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Div de botones -->
+            <div class="row">
+                <div class="col"><button class="btn btn-primary">Preguntar</button></div>
+                <div class="col"><button class="btn btn-primary">Acusar</button></div>
+            </div>
+        </div>
+    </div>
+</div><!-- Fin de módulo a copiar -->
+
+<div class="modal fade" id="modal_pregunta" role="dialog">
+
+</div>
+
+
     <div >
         {{sesioncod}}
     </div>
@@ -15,15 +129,9 @@
         {{consulta}}
     </div> -->
 
-<<<<<<< HEAD
-      <form action="">
-          <button type="button">Preguntar</button>
-          <button type="button">Acusar</button>
-=======
     <form action="">
         <button class="btn btn-primary" type="button">Preguntar</button>
         <button class="btn btn-primary" type="button">Acusar</button>
->>>>>>> 9c72e71b094aa329a63d0ad5739bbb910aec2100
     </form>
 
     <div class="container">
