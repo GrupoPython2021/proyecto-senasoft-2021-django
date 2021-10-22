@@ -15,5 +15,5 @@ class Sesion(TimeStampedModel):
 
     def __str__(self):
         """Representacion de Sesion."""
-        return self.sesion
+        return str(self.id) 
 

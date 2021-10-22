@@ -9,21 +9,34 @@ import random
 
 from applications.users.models import User 
 from applications.sesion.models import Sesion 
+# from applications.sesion.models import Cartas_Completas 
 
 
 """ Vist genérica TemplateView 
 basda en clase """
 #class InicioPartida(TemplateView):
- #   context_object_name = 'usuario'
- #   template_name = "cartas/iniciar-partida.html"
+#   context_object_name = 'usuario'
+#   template_name = "cartas/iniciar-partida.html"
 
 def IniciarPartida(request):
-    sesion = Sesion.objects.last()
+    sesioncod = Sesion.objects.last()
+
+    consulta=Sesion.objects.filter(sesion=sesioncod)
+    # for i in range(User.objects.len()):
+    # consul_user=Sesion.objects.filter(sesion=sesioncod).get()
+
+    
 
     #return HttpResponse('23')
-    return render(request, "cartas/pantalla-juego.html", {'sesion':sesion})
+    return render(request, "cartas/pantalla-juego.html", 
+    {'sesioncod':sesioncod,
+    'consulta':consulta,
+    # 'consul_user': consul_user
+    })
 
-
+# def buscar_codigo():
+#     palabra_clave= IniciarPartida(request)
+#     print(palabra_clave)
 
 
 
@@ -149,6 +162,9 @@ def Unirse_Sesion(FormView):
 
 
 
-def Repartir_Cartas():
-    codigo_sala = request.GET.get("codigo", '')
-    print(codigo_sala)
+# def Repartir_Cartas():
+#     # barajar_sistema(request)
+#     codigo_sala = request.GET.get("codigo", '')
+    
+#     # return Carta.
+

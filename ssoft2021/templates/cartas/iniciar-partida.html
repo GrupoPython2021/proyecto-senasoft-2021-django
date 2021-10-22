@@ -6,6 +6,11 @@
     Esta es la de iniciador de la partida
 -->
 {% block content %}
+<<<<<<< HEAD
+<div class="container">
+
+    <form action="/barajar-sistema/">
+=======
 <div>
     
 
@@ -15,15 +20,22 @@
 
       
 
-    <form method="GET" action="/inicio-partida/"> <!--action="/barajar-sistema/" -->
+    <form method="GET" action="/inicio-partida/"> 
         {% csrf_token %}
         <input class="btn btn-primary" type="submit" name="nick1" value={{nick}}>
         El codigo de la partida es:
         <input class="btn btn-primary" type="text" id="codigo" name="codigo" value="{{r}}">
         <br>
+>>>>>>> 840f658f670e0eacaa731e77c57b8b54dd53ea0c
         <button>Iniciar Partida</button>
     </form>
 
+        <!-- <form action="/barajar-sistema/">
+        
+    </form> -->
+    </form>
+    
+    
         
 
 </div>
