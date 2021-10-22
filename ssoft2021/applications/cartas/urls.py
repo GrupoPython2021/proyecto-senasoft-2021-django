@@ -10,5 +10,7 @@ urlpatterns = [
     path('inicio-partida/', views.IniciarPartida),
     # path('duplicar/', views.duplicar_lista),
     path('barajar-sistema/', views.barajar_sistema),
-    # path('repartir-cartas/', views.Repartir_Cartas),
+    #
+    path('retomar_partida/', views.Retomar_Partida, name='retomar'),
+    path('unirse_sesion/', views.Unirse_Sesion, name='unirse'),
 ]
